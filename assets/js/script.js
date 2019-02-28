@@ -219,7 +219,7 @@ var body = $("html, body");
 if(window.location.href.indexOf('detail.html')>-1) body.stop().animate({scrollTop:0}, 500, 'swing', function() {});
 let src = window.location.href.split('#').pop()
 console.log(src)
-if(src.indexOf('detail.html')>-1 && window.location.href.indexOf('detail.html')>-1) window.location.href = 'file:///home/vucms/Desktop/ProjectFrontEndExam2/index.html';
+if(src.indexOf('detail.html')>-1 && window.location.href.indexOf('detail.html')>-1) window.location.href = 'index.html';
 //PROFILE.JS
 $('.status').click(()=>{
 	if($('.status').html()=='Following') $('.status').html('Follow')
