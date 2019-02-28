@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VuCms's Profile</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/custom.css">
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Itim|Lobster|Montserrat:500|Noto+Serif|Nunito|Patrick+Hand|Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i|Roboto+Slab|Saira" rel="stylesheet">
+	<link href="assets/icon.png" rel="shortcut icon" type="image/x-icon">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+
+
+	<style>
+		li:hover{
+			cursor: pointer;
+		}
+		.banner{
+			height: 500px;
+			background-image: url("http://www.technocrazed.com/wp-content/uploads/2015/12/city-wallpaper-34.jpg");
+			position: relative;
+			opacity: 1;
+		}
+		.banner::before{
+			content: '';
+			background-color: #333;
+			background-size: cover;
+			width: 100%;
+			height: 100%;
+			top:0%;
+			left: 0%;
+			opacity: 0.7;
+			position: absolute;
+		}
+		.box{
+			z-index: 0;
+			position: absolute;
+			bottom: 0%;
+			width: 100%;
+			height: 250px;
+			text-align: center;
+		}
+		
+		.boxtitle{
+			display: inline;
+			color:white;
+			font-weight: bold;
+		}
+		.ip_search{
+			display: inline-block;
+			width: 35%;
+			height: 50px;
+			border:none;
+			border-top-right-radius: 48px;
+			border-top-left-radius: 48px;
+			border-bottom-right-radius: 48px;
+			border-bottom-left-radius: 48px;
+			padding: 0px 20px;
+			margin-top: 50px
+			
+		}
+		.menu{
+			z-index: 100;
+			display: block;
+			position: fixed;
+			top:0%;
+			left: 0%;
+			width: 100%;
+			background-color: #232a34;
+			/*;*/
+			height: 50px;
+			line-height: 50px;
+
+		}
+		.webname{
+			color: white;
+			font-weight: bold;
+			margin-left: 10px;
+		}
+		.logo{
+			background: #4ca081;
+			marker-left:10px;
+			border-radius: 8px;
+		}
+		.ip_search2{
+
+			background: #5d6269;
+			display: inline-block;
+			width: 550px;/**/
+			height: 40px;/**/
+			border:none;
+			border-top-right-radius: 48px;
+			border-top-left-radius: 48px;
+			border-bottom-right-radius: 48px;
+			border-bottom-left-radius: 48px;
+			padding: 0px 20px;
+			margin-left: 50px;
+			color:white;
+		}
+		.ip_search2:focus{
+			color:black;
+			background: white
+		}
+		.rmenu{
+			float: right;
+		}
+		.rmenu li{
+			display: inline-block;
+			color:#ccc;
+			padding: 0px 10px;
+			font-size: 14px;
+			position: relative;
+
+		}
+		.rmenu li:hover{
+			color:white;
+
+		}
+		.rmenu li:hover >ul{
+			display: block;
+		}
+		.rmenu button{
+			background: #05a081;
+			border:none;
+			border-radius: 2px;
+			height: 30px;
+			line-height: 20px;
+			margin-right: 10px;
+			color:white;
+			padding:5px 5px;
+			font-size:14px;
+			font-weight: bold;
+		}
+		.rmenu li ul::before{
+			position: absolute;
+			content: '';
+			width: 0px;
+			height: 0px;
+			top:-10px;
+			right:0%;
+			border-right: 10px solid transparent;
+			border-left: 10px solid transparent;
+			border-bottom: 10px solid white;
+		}
+		.rmenu li ul{
+			display: none;
+			position: absolute;
+			left: -160%;
+			top:100%;
+			
+
+		}
+		.rmenu li ul li:first-child{
+			
+		}
+		.rmenu li ul li{
+			height: 40px;
+			line-height: 40px;
+			z-index: 4;
+			display: block;
+			width: 180%;
+			background: white;
+			text-align: center;
+		}
+		.rmenu li ul li:hover{
+			color:black;
+			background: #a6aaad;	
+		}
+		.content{
+			padding: 0px 20px;
+				
+			
+		}
+		.category_active{
+			font-weight: bold;
+		}
+		.cate:hover{
+			cursor: default;
+		}
+		.gallery{
+			margin-top:15px;
+			display: flex;
+  			justify-content: center;
+  			padding: 0 4px;	
+		}
+		.colx{
+			display: inline-block;
+			margin-top:0px;
+			margin-right: 10px;
+			flex: 1;
+		}
+		.gallery img{
+			width: 100%;
+			display: inline;
+			margin: 5px 5px;
+			border-radius: 5px;
+			-webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.63);
+			-moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.63);
+			box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.63);
+
+			
+		}
+		.gallery a::after{
+			content: '';
+			width: 100%;
+			position: absolute;
+			height: 50%;
+			background-image:linear-gradient(0deg,rgba(0,0,0,1) 0%,transparent 100%);
+			bottom:5px;
+			left: 5px;
+			opacity: 0.3;
+			z-index: 1;
+			display: none;
+		}
+		.gallery a:hover::after{
+			display: inline-block;
+		}
+		.gallery a{
+
+			display: inline-block;
+			position: relative;
+		}
+		.gallery a div{
+			height: 50px;
+			line-height: 50px;
+			bottom: 20px;
+			width: 100%;
+			transition:all ease 0.5s;
+			left:10px;
+			display: none;
+			position: absolute;
+			z-index: 10	
+		}
+		.gallery a div img{
+			width: 50px;
+			height: 50px;
+		}
+		.author{
+			font-weight: bold;
+			color:white;
+		}
+		.rtool{
+			float: right;
+			margin-right: 25px;
+			z-index: 999;
+		}
+		.rtool i{
+			color: white;
+			font-size: 18px;
+
+		}
+		.infomation{
+			color: white;
+			display: inline-block;
+			height: 200px;
+			position: absolute;
+			top:55%;
+			left:40%;
+			text-align: left;
+		}
+		.infomation .more{
+			margin-left: 15px;
+			font-size: 20px;
+			cursor: pointer;
+		}
+		.box img{
+			padding:5px;
+			height: 150px;
+			border-radius: 50%;
+			border:3px solid tomato;
+			position: absolute;
+			top:55%;
+			left:30%;
+		}
+		.username{
+			font-size: 30px;
+
+		}
+		.status{
+			font-weight: bold;
+			cursor: pointer;
+			display: inline-block;
+			border:0.1px solid white;
+			width: 150px;
+			text-align: center;
+			margin-left: 15px;
+
+			
+		}
+		.static{
+			margin-top: 15px;
+			display: flex;
+			width: 500px;
+			font-size: 18px;
+		}
+		.static li {
+			flex-grow: 1
+		}
+		.line{
+			
+			height: 2px;
+			width: 95%;
+			margin: 30px auto;
+			background: #333;
+			animation: ani ease 4s;
+			opacity: 0.8;
+			-webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.63);
+			-moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.63);
+			box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.63);
+		}
+		@keyframes ani{
+			0%{
+				width: 0%
+			}
+			
+			100%{
+				width: 95%
+			}
+
+		}
+		.more{
+			position: relative;
+		}
+		.more:hover ul{
+			display: block;
+		}
+		.more ul{
+			position: absolute;
+			right: -10%;
+			z-index: 10;
+			background: white;
+			color: black;
+			width: 150px;
+			text-align: center;
+			border-radius: 3px;
+			display: none;
+		}
+		.more ul::before{
+			content: '';
+			width: 0;
+			height: 0;
+			border-right: 10px solid transparent;
+			border-left: 10px solid transparent;
+			border-bottom: 10px solid white;
+			position: absolute;
+			bottom: 100%;
+			right:5%;
+			
+		}
+		.more li{
+			height: 35px;
+			line-height: 35px;
+		}
+		.more li:hover{
+			background: #5c6269;
+			color:white;
+
+		}
+		.tagname{
+			cursor: pointer;
+			color: #4286f4;
+			font-weight:bold;
+
+		}
+		.detail_info{
+
+			font-size: 18px;
+		}
+		.phototop{
+			position: absolute;
+			
+			
+		}
+		.phototop img{
+			position: relative;
+			left: 0%;
+			margin-right: 15px;
+			width: 100px !important;
+			height: 100px !important;
+			
+		}
+	</style>
+</head>
+<body>
+	<div class="banner">
+		<div class="menu">
+			<a href="index.html"><img class="logo" src="assets/icon.png" alt=""  width="40" height="40" style="margin-left: 20px"></a>
+			<span class="webname">Pixels</span>
+
+				<input class="ip_search2" autocapitalize="none"  id="search" name="s" placeholder="Search for free photos" required="required" type="search">
+			<div class="rmenu">
+				<ul>
+					<li>Explore
+						</li>
+					<li>License</li>
+					<li onclick="window.location.href='signup.html'">Join</li>
+					<li style="font-size: 20px;font-weight: bold;">    &sdot;&sdot;&sdot;
+						<ul>
+							<li>Submenu 1</li>
+							<li>Submenu 2</li>
+							<li>Submenu 3</li>
+							<li>Submenu 4</li>
+							<li>Submenu 5</li>
+							
+						</ul>
+					</li>
+					<button>Upload</button>
+				</ul>
+			</div>
+		</div>
+		<div class="box" style="position: relative;">
+			<img src="https://api.adorable.io/avatars/200/abott@adorable.png" alt="">
+			<div class="infomation">
+				<span class="username">VuCms</span>
+				<span class="status">Following</span>
+				<span class="more">&sdot;&sdot;&sdot;
+					<ul>
+						<li>Submenu 1</li>
+							<li>Submenu 2</li>
+							<li>Submenu 3</li>
+							<li>Submenu 4</li>
+							<li>Submenu 5</li>
+					</ul>
+				</span><br>
+				<div class="static">
+					<li>5 Posts</li>
+					<li>50k Followers</li>
+					<li>Following 1k Users</li>
+				</div>
+				<span class="username" style="font-size: 25px">VuCms</span><br>
+				<span>This is my gallery, which share about my life, work,bla bla</span><br>
+				<span class="tagname">@vucms </span> , <span class="tagname">@life </span>, <span class="tagname">@working </span>, <span class="tagname">@natural </span><br>
+				<span class="detail_info"><i class="far fa-building"></i>&nbsp;&nbsp;&nbsp;Working at SICT.</span><br>
+				<span class="detail_info"><i class="fas fa-graduation-cap"></i>&nbsp;&nbsp;Studied at OIK high school.
+				</span><br>
+				<span class="detail_info"><i class="fas fa-map-marked-alt"></i>&nbsp;&nbsp; Live at Da Nang City</span><br>
+				<div class="phototop">
+					
+					<img  src="https://images.pexels.com/photos/861126/pexels-photo-861126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+					
+					<img  src="https://images.pexels.com/photos/1510540/pexels-photo-1510540.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+					
+					<img  src="https://images.pexels.com/photos/1322898/pexels-photo-1322898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="line"></div>
+	<div class="content">
+		<div class="ctitle">
+			<span style="font-weight: 600;font-size:20px;margin-left: 5px;"><b>VuCms's Photos</b></span>
+			`
+		</div>
+		<div class="gallery">
+			<div class="colx">
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/861126/pexels-photo-861126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+					<div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms 
+							
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+						 
+					</div>
+				</a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1707825/pexels-photo-1707825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+				<div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1510540/pexels-photo-1510540.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+				<div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/6468/animal-brown-horse.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+				<div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1374064/pexels-photo-1374064.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+				<div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/690737/pexels-photo-690737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+				<div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1312488/pexels-photo-1312488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+				<div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1322898/pexels-photo-1322898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+				<div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1470109/pexels-photo-1470109.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+				<div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1524232/pexels-photo-1524232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+				<div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/861126/pexels-photo-861126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+				<div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1707825/pexels-photo-1707825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+				<div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1312488/pexels-photo-1312488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+				<div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+			</div>
+			<div class="colx">
+				
+				
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1374064/pexels-photo-1374064.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/861126/pexels-photo-861126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1322898/pexels-photo-1322898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1470109/pexels-photo-1470109.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1524232/pexels-photo-1524232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1707825/pexels-photo-1707825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1312488/pexels-photo-1312488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/861126/pexels-photo-861126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1510540/pexels-photo-1510540.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/6468/animal-brown-horse.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/690737/pexels-photo-690737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1707825/pexels-photo-1707825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1312488/pexels-photo-1312488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+			</div><div class="colx">
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1312488/pexels-photo-1312488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1322898/pexels-photo-1322898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1470109/pexels-photo-1470109.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/861126/pexels-photo-861126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1510540/pexels-photo-1510540.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/6468/animal-brown-horse.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1374064/pexels-photo-1374064.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/690737/pexels-photo-690737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1707825/pexels-photo-1707825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/861126/pexels-photo-861126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1707825/pexels-photo-1707825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1312488/pexels-photo-1312488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+				<a href="javascript:void(0)"><img src="https://images.pexels.com/photos/1524232/pexels-photo-1524232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""><div>
+						<img src="https://api.adorable.io/avatars/285/avt.png" alt="">
+						<span class="author">
+							VuCms
+						</span>
+						<span class="rtool"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;&nbsp;<i class="far fa-heart"></i></span>
+					</div></a>
+			</div>
+		</div>
+	</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

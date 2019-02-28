@@ -1,0 +1,22 @@
+
+*{
+			box-sizing: border-box;
+			font-family: 'Saira', sans-serif;
+			margin:0;
+			padding:0;
+		}
+a{
+	text-decoration: none;
+	color:black;
+}
+li{
+	list-style: none;
+}
+span:hover{
+	text-decoration: none;
+}
+button:focus {outline:0;}
+input:focus{outline:0;}
+::-webkit-scrollbar {
+display: none;
+}
