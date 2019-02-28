@@ -204,7 +204,7 @@ let alist = document.querySelectorAll('.gallery a');
 
 for(let x in alist){
 	alist[x].onclick = ()=>{
-		window.location.href = 'file:///home/vucms/Desktop/ProjectFrontEndExam2/detail.html'+'#'+alist[x].children[0].currentSrc
+		window.location.href = 'detail.html'+'#'+alist[x].children[0].currentSrc
 		if(window.location.href.indexOf('detail.html')>-1) location.reload()
 	}
 	alist[x].onmouseover = ()=>{
