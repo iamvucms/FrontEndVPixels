@@ -16,11 +16,11 @@ function switch_gender(type){
 	
 }
 $('#ip_name').change(()=>{
-	let patt = /[a-zA-Z ]{3,}/i;
+	let patt = /[a-zA-Z ]{1,}/i;
 
 	let name = $('#ip_name').val();
 	if(!patt.test(name)){
-		errors["name"] = "Name must be than 2 characters without special characters";
+		errors["name"] = "Name must be than 1 characters without special characters";
 		$('#ip_name').css('border',"2px solid red");
 		document.querySelector('#ip_name').nextElementSibling.style.display ='inline';
 	}else{
@@ -43,8 +43,9 @@ $('#ip_mail').change(()=>{
 	}
 })
 $('#ip_pass').change(()=>{
+	let patt = /[^\s]{6,}/i;
 	let name = $('#ip_pass').val();
-	if(name.length<6){
+	if(!patt.test(name)){
 
 		errors["pass"] = "Password must be than 6 characters";
 		$('#ip_pass').css('border',"2px solid red");
