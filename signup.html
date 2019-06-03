@@ -4,147 +4,44 @@
 	<meta charset="UTF-8">
 	<title>VPixels-Sign up</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="assets/css/custom.css">
+          <link rel="stylesheet" href="assets/css/custom.css">
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Itim|Lobster|Montserrat:500|Noto+Serif|Nunito|Patrick+Hand|Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i|Roboto+Slab|Saira" rel="stylesheet">
-	<style>
+          <link rel="stylesheet" href="assets/css/account.css">
+          <style>
 		
-		body,html{
-			height: 100%;
-			
-		}
-		.content::after{
-			content: '';
-			background-image: url("assets/city-wallpaper-34.jpg");
-			width: 100%;
-			height: 100%;
-			top:0%;
-			left: 0%;
-			opacity: 0.5;
-			position: absolute;
-		}
-		.content{
-			background-image: linear-gradient(90deg,#6761c1,violet);
-			position: relative;
-			height: 100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
-		}
-		.box-login{
-			padding:20px;
-			width: 800px;
-			height: 500px;
-			background-color: white;
-			/*-webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 11% 100%, 0 80%, 0 0);
-			clip-path: polygon(50% 0%, 100% 0, 100% 100%, 11% 100%, 0 80%, 0 0);*/
-			border-radius: 20px;
-			z-index: 5;
-			opacity: 0.85;
-			
-		}
-		.halfbox{
-			text-align: center;
-			display: flex;
-			justify-content: center;
-
-		}
-		.form-group > input{
-			padding:0 20px;
-			font-size: 20px;
-			width: 95%;
-			height: 60px;
-			outline: none!important;
-    		transition: all ease 0.5s;
-    		
-		}
-
-
-		
-		.form-group > input:focus{
-			border-radius:20px;
-			border: 2px solid #4272d7;
-		}
-		.tlogin{
-			font-size: 35px;
-			text-align: center;
-			margin: 30px 0px;
-		}
-		#signupbtn{
-			color:white;
-			height: 60px;
-			width: 80%;
-			background-color: #4272d7;
-			border-top-left-radius: 48px;
-			border-top-right-radius: 48px;
-			border-bottom-right-radius: 48px;
-			border-bottom-left-radius: 48px;
-			border:none;
-			outline: none!important;
-    		transition: all ease .4s;
-		}
-		#signupbtn:hover{
-			background-color: black;
-		}
-		.img-box{
-			margin-top:15%;
-
-		}
-		.gender>button{
-			height: 60px;
-			width: 46.5%;
-			border:none;
-			background-color: black;
-			color:white;
-			overflow: 
-		}
-		.gender>button:hover{
-			background-color: #68ff0a;
-			
-		}
-		#name_error{
-			width:20px;
-			height:20px;
-			position: absolute;
-			top:35%;
-			right: -10px;
-			border-radius: 50%;
-			background-color: red;
-			color:white;
-			line-height: 20px;
-			text-align: center;
-			cursor: help;
-			display: none;
-		}
-		#name_info{
-			position: absolute;
-			right: -44%;
-			top:-60%;
-			width: 300px;
-			height: 45px;
-
-			background-color: black;
-			border-radius: 5px;
-			color:white;
-			z-index: 10;
-			display: none;
-		}
-		#name_info::after{
-			content: '';
-			width: 0;
-			height: 0;
-			position:absolute;
-			top:100%;
-			right: 45%;
-			border-top:8px solid black;
-			border-right: 8px solid transparent;
-			border-left: 8px solid transparent;
-
-		}
-		.form-login
-	</style>
+          </style>
+          
 </head>
 <body>
+          <div class="banner">
+		<div class="menu">
+			<a href="index.html"><img class="logo" src="assets/icon.png" alt=""  width="40" height="40" style="margin-left: 20px"></a>
+			<span class="webname">Pixels</span>
+
+				<input class="ip_search2" autocapitalize="none"  id="search" name="s" placeholder="Search for free photos" required="required" type="search">
+			<div class="rmenu">
+				<ul>
+					<li>Explore
+						</li>
+					<li>License</li>
+					<li onclick="window.location.href='signup.html'">Join</li>
+					<li style="font-size: 20px;font-weight: bold;">    &sdot;&sdot;&sdot;
+						<ul>
+							<li>Submenu 1</li>
+							<li>Submenu 2</li>
+							<li>Submenu 3</li>
+							<li>Submenu 4</li>
+							<li>Submenu 5</li>
+							
+						</ul>
+					</li>
+					<button>Upload</button>
+				</ul>
+			</div>
+		</div>
+		
+	</div>
 	<div class="content">
 		<div class="box-login">
 			<p class="tlogin">Account Register</p>
@@ -154,12 +51,12 @@
 					<form action="" onsubmit="return false;" class="form-login">
 						
 					<div class="form-group col-md-12" style="position: relative">
-						<input type="text" placeholder="Full Name" id="ip_name">
+						<input type="text" placeholder="Full Name" id="ip_name" autocomplete="off">
 						<span class="error" id="name_error" style="">X</span>
 						<span id="name_info">Name must be than 1 characters without special characters</span>
 					</div>
 					<div class="form-group col-md-12" style="position: relative">
-						<input type="number" min="1" max="100" placeholder="Age" id="ip_age">
+						<input type="number" min="1" max="100" placeholder="Age" id="ip_age" autocomplete="off">
 						<span class="error" id="name_error" style="">X</span>
 						<span id="name_info">Please type number</span>
 					</div>
@@ -175,12 +72,12 @@
 					<form action="" onsubmit="return false;" class="form-login">
 						
 					<div class="form-group col-md-12" style="position: relative">
-						<input type="text" placeholder="Email" id="ip_mail">
+						<input type="text" placeholder="Email" id="ip_mail" autocomplete="off">
 						<span class="error" id="name_error" style="">X</span>
 						<span id="name_info">Please type email format exactly</span>
 					</div>
 					<div class="form-group col-md-12">
-						<input type="password" placeholder="Password" id="ip_pass">
+						<input type="password" placeholder="Password" id="ip_pass" >
 						<span class="error" id="name_error" style="">X</span>
 						<span id="name_info">Password must be than 6 characters</span>
 					</div>
@@ -197,7 +94,12 @@
 						
 					
 			</div>
-			<div style="display: flex;justify-content: center;"><button id="signupbtn">Sign Up</button></div>
+                              <div style="text-align: center;"><button id="signupbtn">Sign Up</button><br>
+                              <button class="signfb">
+                                        <i class="fab fa-facebook-square"></i> <span>Or sign up with Facebook</span>
+                              </button>
+                              </div>
+                              
 		</div>
 	</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

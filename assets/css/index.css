@@ -1,0 +1,451 @@
+li:hover{
+          cursor: pointer;
+}
+p{
+          margin-bottom: 0px !important;
+}
+.banner{
+          height: 500px;
+          background-image: url("http://www.technocrazed.com/wp-content/uploads/2015/12/city-wallpaper-34.jpg");
+          position: relative;
+          opacity: 1;
+          transition:all ease 1s;
+          background-position: center;
+}
+.banner::before{
+          content: '';
+          background-image: linear-gradient(90deg,tomato,black);
+          background-size: cover;
+          width: 100%;
+          height: 100%;
+          top:0%;
+          left: 0%;
+          opacity: 0.2;
+          position: absolute;
+}
+.box{
+          z-index: 0;
+          position: absolute;
+          bottom: 0%;
+          width: 100%;
+          height: 250px;
+          text-align: center;
+}
+.boxtitle{
+          display: inline;
+          color:white;
+          font-weight: bold;
+}
+#form_ipsearch {
+          display: flex;
+          justify-content: center;
+          margin-top: 35px;
+}
+#form_ipsearch  button{
+          height:50px;
+          width:50px;
+          text-align: center;
+          line-height: 50px;
+          border:none;
+          border-top-right-radius: 5px;
+          border-top-left-radius: 0;
+          border-bottom-right-radius: 5px;
+          border-bottom-left-radius: 0;
+}
+#form_ipsearch  button:hover{
+          background:#05a081;
+          color:white
+}
+.ip_search{
+          outline: none;
+          display: inline-block;
+          width: calc(35% - 50px);
+          height: 50px;
+          border:none;
+          border-top-right-radius: 0;
+          border-top-left-radius: 5px;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 5px;
+          padding: 0px 20px;
+          
+}
+.menu{
+          z-index: 100;
+          display: block;
+          position: fixed;
+          top:0%;
+          left: 0%;
+          width: 100%;
+          background-color: transparent;
+          /*#232a34;*/
+          height: 50px;
+          line-height: 50px;
+
+}
+.webname{
+          color: white;
+          font-weight: bold;
+          margin-left: 10px;
+}
+.logo{
+          background: #4ca081;
+          marker-left:10px;
+          border-radius: 8px;
+}
+.ip_search2{
+
+          background: #5d6269;
+          display: inline-block;
+          width: 0;/*550px*/
+          height: 0;/*40px*/
+          border:none;
+          border-top-right-radius: 48px;
+          border-top-left-radius: 48px;
+          border-bottom-right-radius: 48px;
+          border-bottom-left-radius: 48px;
+          padding: 0px 20px;
+          margin-left: 50px;
+          color:white;
+}
+.ip_search2:focus{
+          color:black;
+          background: white
+}
+.rmenu{
+          float: right;
+}
+.rmenu li{
+          display: inline-block;
+          color:#ccc;
+          padding: 0px 10px;
+          font-size: 14px;
+          position: relative;
+
+}
+.rmenu li:hover{
+          color:white;
+
+}
+.rmenu li:hover >ul{
+          display: block;
+}
+.rmenu button{
+          background: #05a081;
+          border:none;
+          border-radius: 2px;
+          height: 30px;
+          line-height: 20px;
+          margin-right: 10px;
+          color:white;
+          padding:5px 5px;
+          font-size:14px;
+          font-weight: bold;
+}
+.rmenu li ul::before{
+          position: absolute;
+          content: '';
+          width: 0px;
+          height: 0px;
+          top:-10px;
+          right:0%;
+          border-right: 10px solid transparent;
+          border-left: 10px solid transparent;
+          border-bottom: 10px solid white;
+}
+.rmenu li ul{
+          display: none;
+          position: absolute;
+          left: -160%;
+          top:100%;
+          
+
+}
+.rmenu li ul li:first-child{
+          
+}
+.rmenu li ul li{
+          height: 40px;
+          line-height: 40px;
+          z-index: 4;
+          display: block;
+          width: 180%;
+          background: white;
+          text-align: center;
+}
+.rmenu li ul li:hover{
+          color:black;
+          background: #a6aaad;	
+}
+.content{
+          padding: 20px 20px;
+                    
+          
+}
+.category_active{
+          font-weight: bold;
+}
+.cate:hover{
+          cursor: default;
+}
+.gallery{
+          margin-top:15px;
+          display: flex;
+}
+.colx{
+          display: inline-block;
+          margin-top:0px;
+          margin-right: 10px;
+          max-width:calc((100% - 30px)/4);
+}
+.gallery .colx a{
+          margin-bottom:10px;
+          border-radius: 5px;
+}
+.gallery .colx:last-child{
+          margin-right: 0px!important;
+}
+.gallery img{
+          width: 100%;
+          display: inline;
+          border-radius: 5px;
+          -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.63);
+          -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.63);
+          box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.63);
+
+          
+}
+.gallery a::after{
+          content: '';
+          width: 100%;
+          position: absolute;
+          height: 50%;
+          background-image:linear-gradient(0deg,rgba(0,0,0,1) 0%,transparent 100%);
+          bottom:0px;
+          left: 0px;
+          opacity: 0.3;
+          z-index: 1;
+          display: none;
+          border-radius: 5px;
+}
+.gallery a:hover::after{
+          display: inline-block;
+}
+.gallery a{
+
+          display: inline-block;
+          position: relative;
+}
+.gallery a div.imgdescription{
+          height: 50px;
+          bottom: 20px;
+          width: 100%;
+          transition:all ease 0.5s;
+          left:10px;
+          display: none;
+          position: absolute;
+          z-index: 10	
+}
+.gallery a div.poster{
+          display: flex;
+          width:calc(100% - 75px);
+}
+.gallery a div.poster img{
+          width: 50px;
+          height: 50px;
+}
+.gallery a div.poster .description{
+          font-weight: 400!important;
+          line-height: 10px;
+}
+.author{
+          font-weight: bold;
+          color:white;
+          margin-left: 10px;
+}
+.rtool{
+          line-height: 50px;
+          float: right;
+          margin-right: 25px;
+          width:50px;
+          text-align: center;
+          z-index: 999;
+}
+.rtool i{
+          color: white;
+          font-size: 18px;
+
+}
+.footer{
+          margin-top: 20px;
+          box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.63);
+          border-radius: 5px;
+}
+.fhead{
+          padding-bottom:30px;
+          border-radius: 5px;
+          outline:none;
+          background-color: #081929;
+}
+.ffoot{
+          background-color: white;
+}
+.supplier,.information{
+          margin:0 auto;
+          width:72%;
+}
+.information{
+          padding-top:20px;
+          color:white;
+          display:flex;
+          font-weight: 200;
+}
+.information ul .infotitle{
+          text-transform: uppercase;
+          font-size: 1em;
+}
+.information li{
+          text-transform: capitalize;
+          font-size: 0.8em;
+          padding: 2.5px 0px;
+}
+.information li a{
+
+          color:white;
+}
+.information li p{
+          line-height: 25px;
+          margin-left: 10px;
+          font-size: 0.9em;
+}
+.information li a:hover{
+          text-decoration: underline;
+}
+.information ul:nth-child(1),.information ul:nth-child(2),.information ul:nth-child(3){
+          flex-grow: 1;
+          max-width: calc(20% - 10px);
+          margin-right: 10px;
+}
+.information ul:nth-child(4){
+          flex-grow: 2;
+          max-width: 40%;
+          
+}
+.information ul:nth-child(4) #mailreg input{
+          margin-top: 10px;
+          border: none;
+          height: 30px;
+          width:calc(100% - 87px);
+          padding:5px 10px;
+          border-radius: 2px;
+          margin-right: 5px;
+          background-image: url(../mail.png);
+          background-repeat: no-repeat;
+          background-position: calc(100% - 20px);
+}
+.information ul:nth-child(4) #mailreg{
+          display: flex;
+
+}
+.information ul:nth-child(4) #mailreg button{
+          margin-top: 10px;
+          border: none;
+          height: 30px;
+          width:82px;
+          padding:5px 10px;
+          border-radius: 2px;
+}
+.mapnamegroup{
+          display: flex;
+          margin-top:15px;
+}
+.mapouter{
+          flex-grow: 1;
+          max-width:45% ;
+          margin-right: 10px;
+}
+.maininfo{
+          position: relative;
+          flex-grow: 1;
+          max-width: 55%;
+          margin-right: 0px;
+}
+.maininfo .logo{
+          margin-top: 0px;
+          position: absolute;
+          right:0%;
+          top:0%;
+}
+.mapouter .gmap_canvas{
+          border-radius: 2px;
+}
+.company{
+          margin-top:100px;
+          direction: rtl;
+          
+          font-size: 0.8em;
+}
+.company p{
+          line-height: 20px;
+}
+
+.maininfo .logoname{
+          border-bottom: solid aqua 7px;          
+}
+.maininfo .logo{
+          cursor: pointer;
+          margin-top:20px;
+          height: 80px; 
+          font-size:3em;
+          font-weight: bold;
+          color:white;
+          display: inline-block;
+          margin-top: 0px;
+          position: absolute;
+          right:0%;
+          background:transparent!important;
+          top:0%;
+}
+/* pagination */
+.pagination{
+          margin-top: 15px;
+          display: flex;
+          justify-content: flex-end;
+}
+.pagination ul{
+          display: flex;
+          margin-bottom: 0px!important;
+          
+}
+.pagination li:first-child{
+          border-radius: 5px 0px 0px 5px;
+}
+.pagination li:last-child{
+          border-radius: 0px 5px 5px 0px;
+}
+.pagination li{
+          font-weight: bold;
+          display: inline-block;
+          width:50px;
+          height: 45px;
+          text-align: center;
+          line-height: 45px;
+          background:#ddd;
+          transition: all ease 0.4s;
+}
+.pagination li:hover{
+          background: #05a081;
+}
+.pagination li:hover a{
+          color:white;
+}
+.pagination li.active{
+          
+          background: #05a081;
+}
+.pagination li.active a{
+          color:white;
+}
+.pagination li a{
+          text-decoration: none;
+          color:#081929;
+}
