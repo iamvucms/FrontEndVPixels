@@ -181,6 +181,29 @@ $('#signupbtn').click(()=>{
 	}
 })
 $('#loginbtn').click(()=>{
+	patt = /[a-zA-Z0-9_.]{3,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}/i;
+	 name = $('#ip_mail').val();
+	if(!patt.test(name)){
+		errors["mail"] = "Please type email format exactly"
+		$('#ip_mail').css('border',"2px solid red");
+		document.querySelector('#ip_mail').nextElementSibling.style.display ='inline';
+	}else{
+		errors["mail"]=""
+		$('#ip_mail').css('border',"2px solid green");
+		document.querySelector('#ip_mail').nextElementSibling.style.display ='none';
+	}
+	 patt = /[^\s]{6,}/i;
+	 name = $('#ip_pass').val();
+	if(!patt.test(name) || name.length ==0){
+
+		errors["pass"] = "Password must be than 6 characters";
+		$('#ip_pass').css('border',"2px solid red");
+		document.querySelector('#ip_pass').nextElementSibling.style.display ='inline';
+	}else{
+		errors["pass"]=""
+		$('#ip_pass').css('border',"2px solid green");
+		document.querySelector('#ip_pass').nextElementSibling.style.display ='none';
+          }
 	check = true;
 	
 	for (let x in errors){
